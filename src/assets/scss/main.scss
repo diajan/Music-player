@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import './generic/_sider';
+@import './components/_item';
+@import './generic/_header';
+@import './generic/content';
+@import './generic/footer';
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: $font-baloo; // $font-nunito; 
+  font-weight: 400;
+}
+body {
+  @include setBackground($color-dark);
+  overflow-x: hidden;
+}

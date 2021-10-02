@@ -1,0 +1,84 @@
+$color-dark: #0e1a2a;
+$color-background: #1d2d47;
+$color-darkLight: #152034;
+$color-primary: #3bdccc;
+$color-secondary: #5c6576;
+$color-white: #f4f4f4;
+$color-pure-white: #fff;
+
+$font-nunito: 'Nunito', sans-serif;
+$font-baloo: 'Baloo 2', cursive;
+$font-babes: 'Bebas Neue', cursive;
+
+%back-test {
+  background-color: #c5c578;
+}
+
+%full-width {
+  width: 100%;
+  height: auto;
+}
+
+%flex-center {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@mixin setBackground($color: $color-white, $opacity: 1) {
+  background-color: $color;
+  opacity: $opacity;
+}
+
+@mixin font-style(
+  $color: $color-white,
+  $size: 1em,
+  $font: $font-nunito,
+  $fw: 400
+) {
+  font-size: $size;
+  font-weight: $fw;
+  font-family: $font;
+  color: $color;
+}
+
+@mixin border-left($color: $color-primary) {
+  transition: all 0.1s;
+  border-left: 3px solid $color-primary;
+}
+
+@mixin display-flex($justify: unset, $a-content: unset, $a-items: unset) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $a-items;
+  align-content: $a-content;
+}
+
+@mixin size-element($w: auto, $h: auto, $border: false) {
+  width: $w;
+  height: $h;
+  @if $border {
+    border: 1px solid;
+  }
+}
+
+.text-primary {
+  color: $color-primary;
+}
+
+.text-dark {
+  color: $color-dark !important;
+}
+
+.bg-dark {
+  background-color: $color-dark;
+}
+
+.bg-light {
+  background-color: $color-white;
+}
+ 
+.bg-primary{
+  background-color: $color-primary;
+}

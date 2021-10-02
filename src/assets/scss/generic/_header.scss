@@ -1,0 +1,77 @@
+.header {
+  width: 100%;
+  height: 400px;
+  background-color: #152034;
+  background-image: linear-gradient(
+    31deg,
+    $color-darkLight 0%,
+    $color-primary 100%
+  );
+
+  &-top {
+    @include display-flex(space-between);
+    padding: 10px;
+
+    &-r {
+      width: 70px;
+      @include display-flex(space-between);
+    }
+    .search-box {
+      background: none;
+      border: none;
+      color: $color-white;
+    }
+  }
+
+  &-mid {
+    height: auto;
+    padding: 30px 10px 0;
+    h1 {
+      @include font-style($color-white, 5em, $font-babes, 800);
+      letter-spacing: 3px;
+    }
+  }
+  &-bottom {
+    @include display-flex(space-between, center, center);
+    height: 100px;
+
+    &-play-music {
+      @include display-flex(space-between, center, center);
+      @include size-element(250px, 50px);
+      @include setBackground(darken($color-primary, 20%));
+      @include font-style($color-white, 1.5em, $font-nunito, 900);
+      border-radius: 0 20px;
+
+      div {
+        @include display-flex(space-evenly, center, center);
+        i {
+          display: block;
+          padding: 2px;
+          margin-top: 10px;
+          font-size: larger;
+          
+        }
+        span {
+          font-family: $font-nunito;
+          font-weight: 600;
+        }
+
+        &:first-child{
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        &:last-child {
+          @include setBackground($color-white);
+          @include size-element(80px, 35px);
+          cursor: pointer;
+          box-sizing: border-box;
+          margin-right: 15px;
+          color: darken($color-primary, 15%);
+          font-weight: 800;
+          border-radius: 0 10px;
+        }
+      }
+    }
+  }
+}

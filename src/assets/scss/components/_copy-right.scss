@@ -1,0 +1,20 @@
+.logo-wrapp {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  
+    div {
+      @extend %flex-center;
+      margin: 20px 0;
+      span {
+        @include font-style($color-white);
+      }
+    }
+    .logo {
+      @extend %flex-center;
+      padding-top: 11px;
+      span {
+        @include font-style($color-primary, 30px);
+      }
+    }
+  }

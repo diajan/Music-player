@@ -1,0 +1,15 @@
+@import '../components/card';
+
+.content {
+  background-color: $color-dark;
+}
+
+.song-slider {
+  pointer-events: all;
+  margin: 20px auto;
+  padding: 15px;
+  &-title {
+    padding-left: 15px;
+    color: $color-white !important;
+  }
+}

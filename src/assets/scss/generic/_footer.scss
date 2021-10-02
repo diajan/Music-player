@@ -1,0 +1,22 @@
+@import '../components/audio-col';
+.footer {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: rgba($color: $color-darkLight, $alpha: 0.99);
+  h3 {
+    text-shadow: 1px 1px 1px #fff;
+  }
+  /* Start  styling the page */
+
+  audio {
+    width: 100%;
+  }
+  audio:nth-child(2),
+  audio:nth-child(4),
+  audio:nth-child(6) {
+    margin: 0;
+  }
+}

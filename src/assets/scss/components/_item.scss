@@ -1,0 +1,39 @@
+@import '../constant';
+
+.menu-item {
+  display: flex;
+  min-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  color: $color-secondary;
+  margin: 5px 0;
+  cursor: pointer;
+  padding-left: 30px;
+
+  &:hover {
+    @include border-left;
+    color: $color-primary;
+  }
+
+  &-wrapp {
+    margin-bottom: 60px;
+  }
+
+  &-label {
+    margin-left: 15px;
+    float: left;
+  }
+
+  &-icon {
+    float: right;
+  }
+}
+
+.item-2hkk8m {
+  position: absolute;
+  display: block;
+  width: 8px;
+  border-radius: 0 4px 4px 0;
+  margin-left: -4px;
+  background-color: #59ffa6;
+}
