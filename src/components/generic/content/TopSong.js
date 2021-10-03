@@ -6,21 +6,21 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 const { Meta } = Card
 
-var options = {
-  method: 'GET',
-  url: 'https://shazam.p.rapidapi.com/songs/list-artist-top-tracks',
-  params: { id: '40008598', locale: 'en-US' },
-  headers: {
-    'x-rapidapi-host': 'shazam.p.rapidapi.com',
-    'x-rapidapi-key': 'bd8e9b8c38msh884c82aa15ecfecp1883f3jsn3af8e5818b9d',
-  },
-}
+// var options = {
+//   method: 'GET',
+//   url: 'https://shazam.p.rapidapi.com/songs/list-artist-top-tracks',
+//   params: {id: '40717346', locale: 'en-US'},
+//   headers: {
+//     'x-rapidapi-host': 'shazam.p.rapidapi.com',
+//     'x-rapidapi-key': 'bd8e9b8c38msh884c82aa15ecfecp1883f3jsn3af8e5818b9d'
+//   }
+// };
 
 export default function TopSong() {
   const [songs, setSongs] = useState([])
-  useEffect(() => {
-    axios.request(options).then(response => setSongs(response.data.tracks))
-  }, [])
+  // useEffect(() => {
+  //   axios.request(options).then(response => setSongs(response.data.tracks))
+  // }, [])
   console.log(songs)
   return (
     <div className='song-slider'>
@@ -55,7 +55,8 @@ export default function TopSong() {
             <Card
               className='card'
               hoverable
-              cover={<img title={el.subtitle} src={el.share.image} />}>
+              cover={<img title={el.subtitle} src={el.share.image} />}
+            >
               <Meta
                 className='card-desc'
                 title={<span>{el.subtitle}</span>}
@@ -65,7 +66,6 @@ export default function TopSong() {
           </Col>
         ))}
       </Row>
-
     </div>
   )
 }
