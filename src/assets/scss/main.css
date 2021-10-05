@@ -41,6 +41,12 @@
   }
 }
 
+@media (max-width: 576px) {
+  .sm-hidden {
+    display: none !important;
+  }
+}
+
 .logo-wrapp {
   display: flex;
   justify-content: center;
@@ -96,6 +102,7 @@
 }
 
 .h-circle {
+  cursor: pointer;
   position: fixed;
   top: 50%;
   left: 0;
@@ -202,6 +209,12 @@
   }
   .mobile-visible {
     display: block !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .sm-hidden {
+    display: none !important;
   }
 }
 
@@ -426,6 +439,12 @@
 .song-slider-title {
   padding-left: 15px;
   color: #f4f4f4 !important;
+}
+
+@media (max-width: 576px) {
+  .song-slider-track {
+    flex-wrap: wrap !important;
+  }
 }
 
 .container-audio .colum1 {

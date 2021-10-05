@@ -96,3 +96,9 @@ $font-babes: 'Bebas Neue', cursive;
     display: block !important;
   }
 }
+
+@media (max-width:576px) {
+  .sm-hidden{
+    display: none !important;
+  }
+}

@@ -64,11 +64,11 @@ export default function Header() {
                 </div>
               </div>
             </Col>
-            <Col xl={2} className='header-bottom'>
+            <Col xl={3} className='header-bottom'>
               <Avatar className='header-bottom-icon' size='large'>
                 <HeartFilled/>
               </Avatar>
-              <Avatar style={{marginLeft:'5px'}} className='header-bottom-icon' size='large'>
+              <Avatar style={{marginLeft:'15px'}} className='header-bottom-icon' size='large'>
                 <ShareAltOutlined/>
               </Avatar>
             </Col>
