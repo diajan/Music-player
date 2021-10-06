@@ -2,6 +2,7 @@
 
 .content {
   background-color: $color-dark;
+  height: 1000px;
 }
 
 .song-slider {
@@ -12,9 +13,37 @@
     padding-left: 15px;
     color: $color-white !important;
   }
-  &-track{
-    @media (max-width:576px) {
+  &-track {
+    @media (max-width: 576px) {
       flex-wrap: wrap !important;
+    }
+  }
+}
+
+.new-song {
+  &-title {
+    padding-left: 35px;
+    color: $color-white !important;
+  }
+}
+
+.artist {
+  &-title {
+    padding-left: 15px;
+    color: $color-white !important;
+  }
+  &-see-all {
+    color: $color-secondary;
+    cursor: pointer;
+  }
+  &-content {
+    padding: 15px;
+    div {
+      transition: all 0.3s ease-in-out;
+    }
+    div:hover {
+      cursor: pointer;
+      transform: scale(1.2);
     }
   }
 }

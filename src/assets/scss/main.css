@@ -406,7 +406,7 @@
 }
 
 .card {
-  transition: all .5s;
+  transition: all 0.5s;
   background-color: #0e1a2a;
   border: none;
   padding: 15px;
@@ -414,7 +414,7 @@
 
 .card span {
   color: #f4f4f4;
-  padding: 15px 0 !important;
+  padding: 15px 0;
 }
 
 .card img {
@@ -426,8 +426,31 @@
   border-radius: 20px 0;
 }
 
+.card-v {
+  cursor: pointer;
+  margin: 0 15px;
+  padding: 5px;
+}
+
+.card-v span {
+  width: 80px;
+  height: 80px;
+  padding: 0 !important;
+}
+
+.card-v-feature {
+  font-size: medium;
+  color: #5c6576 !important;
+}
+
+.card-v-feature:hover {
+  transition: all 0.3s;
+  color: #3bdccc !important;
+}
+
 .content {
   background-color: #0e1a2a;
+  height: 1000px;
 }
 
 .song-slider {
@@ -445,6 +468,34 @@
   .song-slider-track {
     flex-wrap: wrap !important;
   }
+}
+
+.new-song-title {
+  padding-left: 35px;
+  color: #f4f4f4 !important;
+}
+
+.artist-title {
+  padding-left: 15px;
+  color: #f4f4f4 !important;
+}
+
+.artist-see-all {
+  color: #5c6576;
+  cursor: pointer;
+}
+
+.artist-content {
+  padding: 15px;
+}
+
+.artist-content div {
+  transition: all 0.3s ease-in-out;
+}
+
+.artist-content div:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .container-audio .colum1 {
