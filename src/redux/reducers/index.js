@@ -1,3 +1,3 @@
 import { combineReducers } from '@reduxjs/toolkit'
-
-export default combineReducers({})
+import { songs, songIsLoading } from './songs'
+export default combineReducers({ songs, songIsLoading })

@@ -1,10 +1,11 @@
 @import '../constant';
 @import '../components/copy-right';
 @import '../components/scroll';
+@import '../components/half-circle';
 .sider {
   // border-right: 1px solid;
   min-width: 10px !important;
-  min-height: 100vh;
+  min-height: auto;
   border-right: .5px solid rgba($color: $color-secondary, $alpha: 0.5);
   @include setBackground($color-dark);
   &-item {
@@ -22,7 +23,7 @@
       font-weight: 600;
       padding: 1px 8px;
       border-radius: 8px 0;
-      background-color: #3bdccc;
+      background-color: $color-primary;
       cursor: pointer;
       font-size: inherit;
     }

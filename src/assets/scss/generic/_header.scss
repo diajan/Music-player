@@ -1,25 +1,37 @@
 .header {
   width: 100%;
   height: 400px;
-  background-color: #152034;
+  background-color: $color-dark;
+  overflow: scroll;
+  position: relative;
   background-image: linear-gradient(
     31deg,
     $color-darkLight 0%,
     $color-primary 100%
   );
 
-  &-top {
-    @include display-flex(space-between);
-    padding: 10px;
-
-    &-r {
-      width: 70px;
-      @include display-flex(space-between);
+  &-background {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 70%;
+    height: 80%;
+    background-image: url('../img/header.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @media (max-width: 768px) {
+      top: 20%;
+      width: 50%;
+      height: 60%;
     }
-    .search-box {
-      background: none;
-      border: none;
-      color: $color-white;
+    @media (max-width: 576px) {
+      top: 30%;
+      width: 35%;
+      height: 45%;
+    }
+    @media (max-width: 480px) {
+      display: none;
     }
   }
 
@@ -31,10 +43,8 @@
       letter-spacing: 3px;
     }
   }
-  &-bottom {
-    @include display-flex(space-between, center, center);
-    height: 100px;
 
+  &-bottom {
     &-play-music {
       @include display-flex(space-between, center, center);
       @include size-element(250px, 50px);
@@ -44,21 +54,30 @@
 
       div {
         @include display-flex(space-evenly, center, center);
+        line-height: 0;
         i {
           display: block;
           padding: 2px;
-          margin-top: 10px;
           font-size: larger;
-          
         }
         span {
           font-family: $font-nunito;
           font-weight: 600;
         }
+        &:first-child {
+          cursor: pointer;
+          margin-left: 10px;
 
-        &:first-child{
-            cursor: pointer;
-            margin-left: 10px;
+          &:hover {
+            transition: all 0.2s;
+            color: $color-dark;
+          }
+
+          &:active {
+            transition: all 0.2s;
+            transform: rotate(0.1, 0.1);
+            color: $color-primary;
+          }
         }
 
         &:last-child {
@@ -70,8 +89,32 @@
           color: darken($color-primary, 15%);
           font-weight: 800;
           border-radius: 0 10px;
+
+          &:hover {
+            transition: all 0.2s;
+            background-color: $color-dark;
+          }
+          &:active {
+            transition: all 0.2s;
+            transform: rotate(0.1, 0.1);
+            color: $color-white;
+          }
         }
       }
+    }
+
+    &-icon {
+      background-color: $color-info;
+      padding: 3px;
+      font-size: 20px;
+
+      &:hover {
+        transition: all 0.3s;
+        color: $color-dark;
+      }
+    }
+    @media (max-width: 450px) {
+      margin: 10px auto;
     }
   }
 }

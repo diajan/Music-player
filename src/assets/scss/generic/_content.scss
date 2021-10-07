@@ -2,6 +2,7 @@
 
 .content {
   background-color: $color-dark;
+  height: 1000px;
 }
 
 .song-slider {
@@ -11,5 +12,67 @@
   &-title {
     padding-left: 15px;
     color: $color-white !important;
+  }
+  &-track {
+    @media (max-width: 576px) {
+      flex-wrap: wrap !important;
+    }
+  }
+}
+
+.new-song {
+  &-title {
+    padding-left: 35px;
+    color: $color-white !important;
+  }
+  &-wrapp {
+    position: relative;
+    width: 100%;
+    &-avatar {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      transition: 0.3s ease;
+      border-radius: 20px 0;
+      background-color:$color-secondary;
+
+      span {
+        @include display-flex(center,center,center);
+        font-size:50px;
+      }
+    }
+
+    &:hover &-overlay {
+      opacity: .7;
+    }
+  }
+}
+
+.artist {
+  &-title {
+    padding-left: 35px;
+    color: $color-white !important;
+  }
+  &-see-all {
+    color: $color-secondary;
+    cursor: pointer;
+  }
+  &-content {
+    padding: 15px;
+    div {
+      transition: all 0.3s ease-in-out;
+    }
+    div:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
   }
 }

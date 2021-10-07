@@ -1,34 +1,40 @@
-import { Avatar, Col, Row } from 'antd'
+import { Avatar, Col, Row, Spin, Alert } from 'antd'
 import { Card } from 'antd'
 import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai'
-import s1 from 'assets/img/1.jpg'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { getSongs } from '../../../redux/actions/songs'
+import { useDispatch, useSelector } from 'react-redux'
 const { Meta } = Card
 
-var options = {
-  method: 'GET',
-  url: 'https://shazam.p.rapidapi.com/songs/list-artist-top-tracks',
-  params: { id: '40008598', locale: 'en-US' },
-  headers: {
-    'x-rapidapi-host': 'shazam.p.rapidapi.com',
-    'x-rapidapi-key': 'bd8e9b8c38msh884c82aa15ecfecp1883f3jsn3af8e5818b9d',
-  },
-}
-
 export default function TopSong() {
-  const [songs, setSongs] = useState([])
+  const dispatch = useDispatch()
+  const songIsLoading = useSelector(s => s.songIsLoading)
+  let songs = useSelector(s => s.songs.slice(0, 12) ?? [])
+  
   useEffect(() => {
-    axios.request(options).then(response => setSongs(response.data.tracks))
+    dispatch(getSongs())
   }, [])
-  console.log(songs)
+
+  if (songIsLoading) {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          marginTop: '50px',
+          justifyContent: 'center'
+        }}
+      >
+        <Spin tip='Loading...' size='large' />
+      </div>
+    )
+  }
   return (
     <div className='song-slider'>
       <Row justify='space-between'>
         <Col flex='0 0 50%'>
           <h2 className='song-slider-title'>Weekly Top Track</h2>
         </Col>
-        <Col flex='0 1% 50%'>
+        <Col className='sm-hidden' flex='0 1% 50%'>
           <Row gutter={[8, 0]}>
             <Col>
               <Avatar className='bg-primary' size='default'>
@@ -49,23 +55,23 @@ export default function TopSong() {
           </Row>
         </Col>
       </Row>
-      <Row gutter={[16, 16]} wrap={false} style={{ overflow: 'auto' }}>
-        {songs.map(el => (
-          <Col span={4}>
+      <Row className='song-slider-track' gutter={[16, 16]} wrap={false} style={{ overflow: 'auto' }}>
+        {songs.map(song => (
+          <Col xl={4} lg={6} md={6} sm={8} xs={12}>
             <Card
               className='card'
               hoverable
-              cover={<img title={el.subtitle} src={el.share.image} />}>
+              cover={<img title={song.subtitle} src={song.share.image} />}
+            >
               <Meta
                 className='card-desc'
-                title={<span>{el.subtitle}</span>}
-                description={<span>{el.title}</span>}
+                title={<span>{song.subtitle}</span>}
+                description={<span>{song.title}</span>}
               />
             </Card>
           </Col>
         ))}
       </Row>
-
     </div>
   )
 }

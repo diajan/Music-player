@@ -1,0 +1,41 @@
+.h-circle {
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 45px;
+  height: 24px;
+  border-top-left-radius: 110px;
+  border-top-right-radius: 110px;
+  border: 3px solid #152034;
+  border-bottom: 0;
+  transform: rotate(90deg);
+  animation: btn 3s ease infinite;
+  z-index: 1;
+
+  .h-circle-child {
+    position: absolute;
+    bottom: 8%;
+    right: 15%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 28px;
+    height: 14px;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+    border: 5px solid;
+    border-bottom: 0;
+  }
+}
+
+@keyframes btn {
+  0%,
+  50%,
+  100% {
+    color: $color-primary;
+  }
+  25%,
+  75% {
+    color: $color-secondary;
+  }
+}

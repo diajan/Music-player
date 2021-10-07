@@ -2,6 +2,7 @@ $color-dark: #0e1a2a;
 $color-background: #1d2d47;
 $color-darkLight: #152034;
 $color-primary: #3bdccc;
+$color-info: #6c63ff;
 $color-secondary: #5c6576;
 $color-white: #f4f4f4;
 $color-pure-white: #fff;
@@ -43,6 +44,11 @@ $font-babes: 'Bebas Neue', cursive;
   color: $color;
 }
 
+@mixin mar-pad($margin:0,$padding:0) {
+  margin: $margin;
+  padding: $padding;
+}
+
 @mixin border-left($color: $color-primary) {
   transition: all 0.1s;
   border-left: 3px solid $color-primary;
@@ -78,7 +84,26 @@ $font-babes: 'Bebas Neue', cursive;
 .bg-light {
   background-color: $color-white;
 }
- 
-.bg-primary{
+
+.bg-primary {
   background-color: $color-primary;
+}
+
+.mobile-visible{
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+  .mobile-visible{
+    display: block !important;
+  }
+}
+
+@media (max-width:576px) {
+  .sm-hidden{
+    display: none !important;
+  }
 }
