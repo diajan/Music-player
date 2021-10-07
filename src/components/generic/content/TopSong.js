@@ -56,17 +56,17 @@ export default function TopSong() {
         </Col>
       </Row>
       <Row className='song-slider-track' gutter={[16, 16]} wrap={false} style={{ overflow: 'auto' }}>
-        {songs.map(el => (
+        {songs.map(song => (
           <Col xl={4} lg={6} md={6} sm={8} xs={12}>
             <Card
               className='card'
               hoverable
-              cover={<img title={el.subtitle} src={el.share.image} />}
+              cover={<img title={song.subtitle} src={song.share.image} />}
             >
               <Meta
                 className='card-desc'
-                title={<span>{el.subtitle}</span>}
-                description={<span>{el.title}</span>}
+                title={<span>{song.subtitle}</span>}
+                description={<span>{song.title}</span>}
               />
             </Card>
           </Col>

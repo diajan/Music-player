@@ -9,11 +9,11 @@ export default function App() {
   return (
     <AntContent className='content'>
       <TopSong />
-      <Row>
-        <Col span={12}>
+      <Row justify='space-around'>
+        <Col xl={12} lg={10} md={12} xs={24}>
             <NewSongs/>
         </Col>
-        <Col xl={12}>
+        <Col xl={12} lg={10} md={12} xs={24} >
           <Artists />
         </Col>
       </Row>

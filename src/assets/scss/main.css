@@ -475,8 +475,43 @@
   color: #f4f4f4 !important;
 }
 
+.new-song-wrapp {
+  position: relative;
+  width: 100%;
+}
+
+.new-song-wrapp-avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.new-song-wrapp-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s ease;
+  border-radius: 20px 0;
+  background-color: #5c6576;
+}
+
+.new-song-wrapp-overlay span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 50px;
+}
+
+.new-song-wrapp:hover .new-song-wrapp-overlay {
+  opacity: .7;
+}
+
 .artist-title {
-  padding-left: 15px;
+  padding-left: 35px;
   color: #f4f4f4 !important;
 }
 

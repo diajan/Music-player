@@ -1,391 +1,71 @@
 import { Typography, Avatar, Card, Row, Col, Tooltip } from 'antd'
-import { BsDownload, BsHeart, BsPlus } from 'react-icons/bs'
+import { BsDownload, BsHeart, BsPlus, BsFillPlayFill } from 'react-icons/bs'
 import Meta from 'antd/lib/card/Meta'
 import React from 'react'
-const { Text, Link } = Typography
-
+import { useSelector } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 export default function NewSongs() {
+  const songs = useSelector(s => s.songs.slice(0, 10))
+
+  console.log('songs', songs)
   return (
     <div className='new-song'>
       <h2 className='new-song-title'>New Songs</h2>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-      <Card className='card card-v'>
-        <Row justify='space-between' align='middle'>
-          <Col span={12}>
-            <Meta
-              avatar={
-                <Avatar
-                  shape='square'
-                  src='https://i.guim.co.uk/img/media/0d18464e38f5c0d6ca6301ba72387219e4c69298/0_385_2693_1615/master/2693.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=16d6c55a239421bf2822246454220ef2'
-                />
-              }
-              title={<span style={{ fontWeight: '600' }}>Card title</span>}
-              description={<span>This is the description</span>}
-            />
-          </Col>
-          <Col span={8}>
-            <Row justify='space-around' align='middle'>
-              <Col span={10}>
-                <span className='card-v-feature'>3:23</span>
-              </Col>
-              <Col span={10}>
-                <Row justify='space-between'>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Playlist'>
-                      <BsPlus className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Add To Favorite'>
-                      <BsHeart className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                  <Col xs={1}>
-                    <Tooltip title='Download'>
-                      <BsDownload className='card-v-feature' />
-                    </Tooltip>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
+      {songs.map(song => (
+        <Card className='card card-v'>
+          <Row justify='space-between' align='middle'>
+            <Col xl={12} lg={24} md={24} sm={18} xs={15}>
+              <Meta
+                avatar={
+                  <div className='new-song-wrapp'>
+                    <Avatar
+                      className='new-song-wrapp-avatar'
+                      shape='square'
+                      src={song.share.image}
+                    />
+                    <div className='new-song-wrapp-overlay'>
+                      <span>
+                        <BsFillPlayFill />
+                      </span>
+                    </div>
+                  </div>
+                }
+                title={
+                  <span style={{ fontWeight: '600' }}>{song.subtitle}</span>
+                }
+                description={<span>{song.title}</span>}
+              />
+            </Col>
+            <Col xl={{span:12 , offset:0}} lg={{span:12,offset:9}} md={{span:14,offset:9}} sm={6} xs={9}>
+              <Row justify='space-around' align='middle'>
+                <Col span={10}>
+                  <span className='card-v-feature'>3:23</span>
+                </Col>
+                <Col span={10}>
+                  <Row justify='space-between'>
+                    <Col xs={1}>
+                      <Tooltip title='Add To Playlist'>
+                        <BsPlus className='card-v-feature' />
+                      </Tooltip>
+                    </Col>
+                    <Col xs={1}>
+                      <Tooltip title='Add To Favorite'>
+                        <BsHeart className='card-v-feature' />
+                      </Tooltip>
+                    </Col>
+                    <Col xs={1}>
+                      <Tooltip title='Download'>
+                        {/* song.hub.actions[1].uri */}
+                        <BsDownload className='card-v-feature' />
+                      </Tooltip>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Card>
+      ))}
     </div>
   )
 }
